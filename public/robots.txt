@@ -1,0 +1,12 @@
+# Allow all good bots
+User-agent: *
+Allow: /
+
+# Block sensitive paths
+Disallow: /admin/
+Disallow: /account/
+Disallow: /checkout/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://beingwomen.in/sitemap.xml
