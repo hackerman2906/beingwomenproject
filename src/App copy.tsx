@@ -6,7 +6,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import ShippingInfo from './pages/ShippingInfo';
+import ShippingInfo from './pages/Clientexperience';
 import FAQ from './pages/FAQ';
 import Navratri from './pages/Navratri';
 import Wedding from './pages/Wedding';
