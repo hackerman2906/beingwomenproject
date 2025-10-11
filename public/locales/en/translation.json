@@ -9,14 +9,14 @@
   },
   "hero": {
     "title": "Tailored Elegance for Every Occasion",
-    "subtitle": "Bridal, Festive & Everyday tailoring for modern Indian women",
+    "subtitle": "Custom-Fit Bridal, Festive & Everyday Wear for the Modern Indian Woman",
     "cta": "Book Consultation"
-  },
+  },  
   "services": {
     "title": "Our Services",
-    "subtitle": "Expert tailoring services for every occasion",
+    "subtitle": "Designed for You, Tailored to Fit",
     "wedding": {
-      "title": "Wedding Tailoring",
+      "title": "Bridal & Wedding Wear",
       "description": "Bridal lehengas, designer blouses, dupattas & more"
     },
     "navratri": {
@@ -25,7 +25,7 @@
     },
     "casual": {
       "title": "Casual Wear",
-      "description": "Everyday kurtis, simple saree blouses & workwear"
+      "description": "Everyday kurtis, blouses & workwear"
     },
     "explore": "Explore"
   },
@@ -35,14 +35,14 @@
     "reviews": [
       {
         "text": "The attention to detail in my bridal lehenga was exceptional. The team understood exactly what I wanted and delivered beyond my expectations.",
-        "author": "Priya Shah"
+        "author": "Priyal Sheth"
       },
       {
-        "text": "My Navratri chaniya choli fits perfectly and is so comfortable to dance in. The craftsmanship is outstanding!",
+        "text": "My Navratri chaniya choli fits perfectly and is so comfortable to dance in. The design is outstanding!",
         "author": "Meera Patel"
       },
       {
-        "text": "The team at Being Women transformed my everyday wear with their expert tailoring. Every piece fits like it was made for me - because it was!",
+        "text": "The team at Being Women transformed my everyday wear with expert tailoring. Every piece fits like it was made for me - because it was!",
         "author": "Roshni Mehta"
       }
     ]
@@ -52,7 +52,7 @@
     "subtitle": "Celebrating the rich heritage of Indian fashion while embracing modern elegance",
     "mission": {
       "title": "Our Mission",
-      "description": "At Being Women, we are dedicated to bringing you authentic, stylish, and high-quality Indian ethnic wear. Our mission is to preserve and celebrate the rich traditions of Indian fashion while making it accessible to the modern woman."
+      "description": "At Being Women, we are dedicated to bringing you authentic, stylish, and high-quality ethnic wear. Our mission is to preserve and celebrate the rich traditions of Indian fashion while making it accessible to the modern woman."
     },
     "values": {
       "title": "Our Values",
@@ -73,9 +73,9 @@
     },
     "founder": {
       "title": "A Message from Our Founder",
-      "message": "Indian ethnic wear is more than just clothing – it's a celebration of our rich cultural heritage, a symbol of timeless elegance, and a way to connect with our traditions. At Being Women, we're dedicated to bringing you authentic designs that make you feel confident and beautiful, especially during festive celebrations like Navratri.",
-      "name": "Priya Sharma",
-      "role": "Founder & Creative Director"
+      "message": "Indian ethnic wear is more than just clothing. It is a celebration of our rich cultural heritage. At Being Women, we are dedicated to bringing you authentic designs that make you feel confident and beautiful, whether at a wedding, during a festival, at work, or even at home. After all, to be a woman is to be beautiful.",
+      "name": "Nupur Soni",
+      "role": "Founder & Creative Designer"
     }
   },
   "accessibility": {
@@ -102,30 +102,31 @@
       "title": "Contact Us About Our Accessibility Policy",
       "description": "If you have any questions about this accessibility policy, please contact us at:",
       "email": "Email: beingwomengnr@gmail.com",
-      "Phone": "Phone: 9924925874",
-      "address": "Address: 123 Fashion Street, Linking Road<br/>Mumbai, Maharashtra 400050<br/>India"
+      "Phone": "Phone: +9199249 25874",
+      "address": "Address: Bus Stand, 201, Shital Apartment, Opp. of 22/29, nr. ADC Bank, Sector 29, Gandhinagar, Gujarat 382030<br/>India"
     }
   },
   "bookConsultation": {
-    "title": "Book a Tailoring Consultation",
-    "subtitle": "Schedule a personalized fitting or consultation with our design team",
+    "title": "Start Your Style Journey",
+    "subtitle": "Meet with our design team for a personalized consultation and perfect fit",
     "howToBook": {
       "title": "How to Book",
-      "description": "Our expert team will work with you to bring your vision to life. For now, please reach out via phone or WhatsApp at +91 98765 43210.",
+      "description": "Our expert team will work with you to bring your vision to life. Please reach out via phone or WhatsApp at +91 99249 25874.",
       "contact": {
         "phone": "Call or WhatsApp",
         "hours": "Available Hours",
-        "visit": "Visit Our Studio",
+        "visit": "Visit Our Bouti",
         "whatsapp": "Contact Now on WhatsApp"
       }
     },
     "whatToExpect": {
       "title": "What to Expect",
       "steps": [
-        "Initial consultation to discuss your requirements",
-        "Measurements and fabric selection",
-        "Design customization and styling advice",
-        "Timeline and pricing discussion"
+        "Initial consultation to design your idea",
+        "Measurements and Fabric Selection",
+        "Discuss Timing & Prices",
+        "Tailoring and Trial Fitting",
+        "Finishing Touches - Final Product"
       ]
     },
     "onlineBooking": {
@@ -143,7 +144,7 @@
         "questions": [
           {
             "q": "How long does shipping take?",
-            "a": "For domestic orders within India, standard shipping takes 5-7 business days. Express shipping is available for 2-3 business days. International shipping typically takes 7-14 business days depending on the destination."
+            "a": "For domestic orders within India, standard shipping takes 5-7 business days. Express shipping is available for 2-3 business days. International shipping typically takes 7-14 business days, depending on the destination."
           }
         ]
       },
@@ -152,7 +153,7 @@
         "questions": [
           {
             "q": "How do I find my perfect size?",
-            "a": "Use our detailed size guide with measurements for all garments. For lehengas, measure your bust, waist, and hip. For kurtis, take shoulder, bust, and length measurements. When in doubt, size up."
+            "a": "Use our detailed size guide with measurements for all garments. For lehengas, measure your bust, waist, and hip. For kurtis, take shoulder, bust, and length measurements. When in doubt, call us or visit our boutique, and we will guide you."
           }
         ]
       }
@@ -180,14 +181,14 @@
       },
       "usage": {
         "title": "How We Use Your Information",
-        "description": "We use your information to process orders, communicate about your orders, and improve our services."
+        "description": "We use your information to process orders, communicate about your orders, and improve our services. Your data will not be shared with any Third Party for marketing or other purposes."
       },
       "contact": {
         "title": "Contact Us About Privacy",
         "description": "If you have any questions or concerns about how we handle your data, feel free to contact us through the details below.",
         "email": "Email: beingwomengnr@gmail.com",
-        "Phone": "Phone: 9924925874",
-        "address": "Address: 123 Fashion Street, Linking Road<br/>Mumbai, Maharashtra 400050<br/>India"
+        "Phone": "Phone: +91 99249 25874",
+        "address": "Address: Bus Stand, 201, Shital Apartment, Opp. of 22/29, nr. ADC Bank, Sector 29, Gandhinagar, Gujarat 382030<br/>India"
       }
     }
   },
@@ -219,29 +220,25 @@
   },
   "wedding": {
     "hero": {
-      "title": "Wedding Tailoring Services",
-      "subtitle": "Experience the artistry of traditional Gujarati craftsmanship with our bespoke bridal wear tailoring services"
+      "title": "Custom Wedding Outfits Tailored for You",
+      "subtitle": "Celebrate your big day in style with intricately crafted bridal wear, tailored to reflect your story and personal style. From engagement to reception, get beautifully tailored outfits for each of your wedding functions."
     },
     "services": {
       "bridal": {
-        "title": "Bridal Lehenga Stitching",
-        "description": "Experience the artistry of our master tailors with custom bridal lehengas featuring traditional Gujarati mirror work, intricate embroidery, and premium fabrics like silk and velvet. Each piece is meticulously crafted to create your perfect bridal ensemble, combining timeless traditions with contemporary elegance."
+        "title": "Made-to-measure Bridal Outfits",
+        "description": "Turn your wedding vision into reality with our personalized bridal lehenga stitching, made to fit you perfectly on your special days. Designed and created to celebrate your story and style through picture-perfect elegant outfits."
       },
-      "blouse": {
-        "title": "Designer Blouse Customization",
-        "description": "Transform your bridal look with our expertly crafted designer blouses. From deep neck designs to sleeveless styles, each blouse is tailored to perfection with detailed embroidery work. Our skilled artisans ensure the perfect fit while incorporating traditional elements that complement your bridal saree or lehenga."
+      "The Perfect Pairings": {
+        "title": "Designer Blouses & Styled Dupattas",
+        "description": "Transform your bridal look with contemporary blouse and dupatta designs that blend tradition and trend. From custom blouses featuring intricate embroidery, sleeveless and designer necklines to dupattas adorned with lace, tassels, and ornate borders every detail is handcrafted to beautifully complement your saree or lehenga."
       },
-      "dupatta": {
-        "title": "Dupatta Styling & Fall Finishing",
-        "description": "Elevate your bridal ensemble with our custom dupatta styling services. We specialize in creating stunning dupattas with intricate lace work, elegant tassels, and beautiful border embellishments. Our expert craftswomen ensure each piece enhances your bridal elegance while maintaining traditional aesthetics."
-      },
-      "gharChola": {
-        "title": "Bridal Ghar Chola Outfits",
-        "description": "Embrace tradition with our custom-crafted Ghar Chola outfits. Each piece features exquisite zari work and gota-patti finishes, creating the perfect traditional wedding attire. Our tailors pay special attention to incorporating authentic Gujarati elements while ensuring modern comfort and style."
+      "sarees": {
+        "title": "Handcrafted Bridal Sarees",
+        "description": "Embrace tradition with our custom-crafted GharChola, Bandhani, and Patola sarees. Each piece features exquisite zari work and gota-patti finishes, creating the perfect traditional wedding attire. Our team pays special attention to incorporating authentic Gujarati elements while ensuring modern style."
       },
       "family": {
-        "title": "Mother & Sister of Bride Looks",
-        "description": "Complete your family's wedding ensemble with our coordinated outfits for the mother and sisters of the bride. Our designers create harmonious looks that complement the bridal attire while maintaining individual elegance. Each piece is tailored to perfection, ensuring everyone shines on the special day."
+        "title": "Coordinated Family Wedding Wear",
+        "description": "Make every moment memorable with coordinated outfits for the bride’s family. Our designers create harmonious looks that complement the bridal attire while maintaining individual elegance. Each piece is tailored to perfection, ensuring everyone shines on the special day."
       }
     },
     "cta": {
@@ -252,58 +249,46 @@
   },
   "navratri": {
     "hero": {
-      "title": "Navratri Tailoring Services",
-      "subtitle": "Celebrate the divine nine nights with perfectly tailored traditional Gujarati attire"
+      "title": "Navratri Styles",
+      "subtitle": "Celebrate Garba Nights with perfectly tailored traditional Gujarati attire"
     },
     "services": {
       "chaniyaCholi": {
-        "title": "Chaniya Choli Custom Fit",
-        "description": "Experience the perfect fit with our custom-tailored chaniya cholis, designed specifically for Garba and Dandiya. Each piece features traditional mirror work and embroidery while ensuring comfortable movement for dancing. Our expert tailors create flares that complement your style and dancing grace."
+        "title": "Chaniya Choli for Garba Nights",
+        "description": "Celebrate the spirit of Navratri with our personalized Chaniya Cholis. We design your outfits for all nine nights, tailored to fit you perfectly and stay comfortable for dancing away all night. Our expert tailors create flairs that complement your style and dancing grace."
       },
       "garbaWear": {
         "title": "Garba Crop Tops & Blouses",
         "description": "Dance the night away in our specially designed Garba tops and blouses. Each piece is crafted with breathable fabrics and secure stitching, allowing free movement while maintaining style. We incorporate traditional elements with modern comfort for the perfect festive wear."
       },
-      "alterations": {
-        "title": "Ghagra Alterations",
-        "description": "Transform your ready-made ghagras with our expert alteration services. We specialize in waistline customization, flair adjustments, and length modifications to ensure your outfit fits perfectly. Our skilled tailors maintain the original design while enhancing comfort and fit."
-      },
       "fusion": {
-        "title": "Kediyu & Dhoti Style Fusion",
-        "description": "Embrace modern festive fashion with our fusion Kediyu and Dhoti styles. We combine traditional Gujarati elements with contemporary designs, creating unique outfits perfect for special Garba nights. Each piece is tailored to provide both style and comfort."
-      },
-      "accessories": {
-        "title": "Accessories Stitching",
-        "description": "Complete your Navratri look with our custom-stitched accessories. From elaborately designed dupattas to matching potli bags and decorative latkans, we create coordinated pieces that perfectly complement your festive attire."
+        "title": "Modern Fusion Styles & Accessories",
+        "description": "Embrace modern festive fashion with our fusion Kediyu, Dhoti and Indo-Western styles. We combine traditional Gujarati elements with contemporary designs, creating unique outfits perfect for special Garba nights. From elaborately designed dupattas to matching potli bags and decorative latkans, we create coordinated pieces that perfectly complement your festive attire."
       }
     },
     "cta": {
       "title": "Get Ready for Navratri",
-      "subtitle": "Let our expert tailors create your perfect festive attire. Book a consultation today and experience the joy of custom-fitted traditional wear.",
+      "subtitle": "Let our expert tailors create your perfect festive attire. Book a consultation today to avoid last-minute rush and experience the joy of custom-fitted traditional wear.",
       "button": "Schedule Your Fitting"
     }
   },
   "casual": {
     "hero": {
-      "title": "Casual Wear Tailoring",
+      "title": "Casual and Workwear",
       "subtitle": "Experience the comfort of perfectly fitted everyday wear with our expert tailoring services"
     },
     "services": {
       "kurtis": {
-        "title": "Kurtis & Tunics Tailoring",
+        "title": "Kurtis, Tops & Tunics",
         "description": "Experience the perfect blend of comfort and style with our custom-tailored kurtis and tunics. We specialize in creating unique pieces using traditional Gujarati fabrics like bandhej, ajrakh, and ikkat. Each garment is crafted to ensure both comfort and elegance for your everyday wear."
       },
       "salwar": {
-        "title": "Salwar Kameez Sets",
-        "description": "Discover comfort and elegance with our custom-tailored salwar kameez sets. Our skilled artisans create perfectly fitted outfits with trendy necklines and various sleeve options. Each piece is designed to provide both style and comfort for your daily wear."
+        "title": "Dress Sets",
+        "description": "Discover comfort and elegance with our custom-tailored Dress-Dupatta-Bottoms sets. We create outfits with fabrics selected by you, with trendy necklines, comfortable Pallazos, and various sleeve options. Each piece is designed to provide both style and comfort for your daily wear."
       },
       "blouses": {
-        "title": "Workwear Saree Blouses",
-        "description": "Look professional and feel confident with our custom-tailored workwear saree blouses. We create elegant, breathable designs perfect for office wear and semi-formal occasions. Each blouse is crafted to ensure comfort during long working hours while maintaining a sharp, professional appearance."
-      },
-      "lehengas": {
-        "title": "Simple Lehengas for Daywear",
-        "description": "Add grace to your daily ethnic wear with our lightweight lehenga designs. Perfect for special day events, each piece is crafted to provide comfort while maintaining elegance. We create versatile pieces that can be mixed and matched for various occasions."
+        "title": "Workwear",
+        "description": "Look professional and feel confident with our custom-tailored workwear saree blouses, Indo-western sets, Kurtis, loose-fitting bottomwear and more. We create elegant, breathable designs perfect for office wear and semi-formal occasions. Each piece is crafted to ensure comfort during long working hours while maintaining a sharp, professional appearance."
       },
       "alterations": {
         "title": "Alteration Services",
@@ -332,24 +317,23 @@
       "send": "Send Message",
       "sending": "Sending...",
       "success": "Message sent successfully!",
-      "error": "Failed to send message. Please try again."
+      "error": "Failed to send a message. Please try again."
     },
     "info": {
       "title": "Contact Information",
       "phone": "Phone",
       "email": "Email",
       "address": "Store Location",
-      "addressdetails": "123 Fashion Street, Linking Road<br/>Mumbai, Maharashtra 400050<br/>India",
-      "hours": "Monday to Saturday, 10am to 7pm IST"
+      "addressdetails": "Bus Stand, 201, Shital Apartment, Opp. of 22/29, nr. ADC Bank, Sector 29<br/>Gandhinagar, Gujarat 382030<br/>India",
+      "hours": "Tuesday to Sunday, 11am to 7pm IST"
     },
     "hours": {
       "title": "Store Hours",
-      "weekdays": "Monday - Friday",
-      "saturday": "Saturday",
-      "sunday": "Sunday",
+      "weekdays": "Tuesday - Sunday",
+      "monday": "Monday",
       "closed": "Closed",
-      "timeweekdays": "10:00 AM - 7:00 PM IST",
-      "timesaturday": "10:00 AM - 5:00 PM IST",
+      "timing": "11:00 AM - 7:00 PM IST",
+      "timesaturday": "11:00 AM - 7:00 PM IST",
       "timesunday": "Closed"
     },
     "cta": "Schedule Your Consultation",
@@ -376,7 +360,7 @@
       "text": "Ready to create your perfect outfit? Schedule a consultation with our expert tailors.",
       "cta": "Book Consultation"
     },
-    "copyright": "© 2025 Being Women. All rights reserved."
+    "copyright": "© 2025 Being Women Gandhinagar. All rights reserved."
   },
   "business": {
     "name": "Being Women Boutique Private Limited",

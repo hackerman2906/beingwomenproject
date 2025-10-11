@@ -82,8 +82,8 @@ const Footer = () => {
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <ul className="mt-4 md:mt-6 space-y-1 md:space-y-2 text-secondary/80 text-xs md:text-sm">
-              <li>{t('contact.info.email')} - support@beingwomen.in</li>
-              <li>{t('contact.info.phone')} - +91 98765 43210</li>
+              <li>{t('contact.info.email')} - beingwomengnr@gmail.com</li>
+              <li>{t('contact.info.phone')} - +9199249 25874</li>
               <li>{t('contact.info.hours')}</li>
             </ul>
           </div>

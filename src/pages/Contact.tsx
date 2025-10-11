@@ -123,7 +123,7 @@ const Contact = () => {
                   <Phone className="h-5 w-5 text-secondary mt-1" />
                   <div>
                     <h3 className="font-semibold text-secondary">{t('contact.info.phone')}</h3>
-                    <p className="text-secondary/80">+91 98765 43210</p>
+                    <p className="text-secondary/80">+9199249 25874</p>
                     <p className="text-secondary/80">{t('contact.info.hours')}</p>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ const Contact = () => {
                   <Mail className="h-5 w-5 text-secondary mt-1" />
                   <div>
                     <h3 className="font-semibold text-secondary">{t('contact.info.email')}</h3>
-                    <p className="text-secondary/80">support@beingwomen.in</p>
+                    <p className="text-secondary/80">beingwomengnr@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -150,16 +150,12 @@ const Contact = () => {
               <div className="space-y-2">
                 <div className="flex justify-between text-secondary">
                   <span>{t('contact.hours.weekdays')}</span>
-                  <span>{t('contact.hours.timeweekdays')}</span>
+                  <span>{t('contact.hours.timing')}</span>
                 </div>
                 <div className="flex justify-between text-secondary">
-                  <span>{t('contact.hours.saturday')}</span>
-                  <span>{t('contact.hours.timesaturday')}</span>
-                </div>
-                <div className="flex justify-between text-secondary">
-                  <span>{t('contact.hours.sunday')}</span>
-                  <span>{t('contact.hours.timesunday')}</span>
-                </div>
+                  <span>{t('contact.hours.monday')}</span>
+                  <span>{t('contact.hours.closed')}</span>
+                </div>                
               </div>
             </div>
           </div>

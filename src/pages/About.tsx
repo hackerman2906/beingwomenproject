@@ -25,11 +25,11 @@ const About = () => {
               {t('about.mission.description')}
             </p>
           </div>
-          <div className="aspect-[5/6] rounded-lg overflow-hidden">
+          <div className="aspect-[5/3] rounded-lg overflow-hidden">
             <img
               src="/assets/founder 1.jpg"
               alt={t('about.mission.title')}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[center_20%]"
             />
           </div>
         </div>
