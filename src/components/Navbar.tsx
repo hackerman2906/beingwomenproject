@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -28,8 +28,8 @@ const Navbar = () => {
               being
             </span>
             <img
-              src="/assets/logo1.jpg"
-              alt="Logo Icon"
+              src="/assets/logo_transparent_bg.png"
+              alt="Being Women logo"
               className="h-8 md:h-10 w-auto"
             />
             <span className="font-display text-2xl md:text-3xl font-bold text-secondary tracking-wide">

@@ -40,3 +40,32 @@ img {
 .animate-fadeInUp {
   animation: fadeInUp 0.8s ease-out both;
 }
+
+/* =====================
+   Reusable UI Polish
+   ===================== */
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-primary;
+}
+
+.soft-shadow {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.image-overlay {
+  position: relative;
+}
+
+.image-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.25) 100%);
+  pointer-events: none;
+}
+
+.image-overlay > img {
+  position: relative;
+  z-index: 0;
+}
+

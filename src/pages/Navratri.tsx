@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import PageWrapper from '../components/PageWrapper';
@@ -7,6 +6,11 @@ const Navratri = () => {
   const { t } = useTranslation();
 
   const services = t('navratri.services', { returnObjects: true });
+  const serviceImages = [
+    "/assets/dress2.JPG",
+    "/assets/dress3.JPG",
+    "/assets/dress4.jpeg"
+  ];
 
   return (
     <PageWrapper className="bg-primary min-h-screen">
@@ -26,26 +30,31 @@ const Navratri = () => {
           {Object.entries(services).map(([key, service]: [string, any], index) => (
             <section 
               key={key} 
-              className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}
+              className={`group flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center ${index === 0 ? '' : 'pt-12 md:pt-16 border-t border-secondary/15'}`}
             >
               <div className="w-full md:w-1/2">
-                <div className="aspect-[6/5] overflow-hidden rounded-2xl">
+                <div className="aspect-[6/5] overflow-hidden rounded-2xl image-overlay soft-shadow ring-1 ring-secondary/10">
                   <img
-                    src={`/assets/dress${index + 2}.jpg`}
+                    src={serviceImages[index]}
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
               </div>
               
               <div className="w-full md:w-1/2 space-y-8">
+                <div className="flex items-center gap-3">
+                  <span className="h-[2px] w-10 rounded-full bg-secondary/70" />
+                  <span className="h-2 w-2 rounded-full bg-secondary/60" />
+                </div>
                 <h2 className="font-display text-3xl text-secondary">{service.title}</h2>
                 <p className="text-secondary/80 leading-relaxed">
                   {service.description}
                 </p>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center px-8 py-3 bg-secondary text-primary rounded-full hover:bg-secondary/90 transition-colors text-lg font-medium"
+                  className="focus-ring inline-flex items-center px-8 py-3 bg-secondary text-primary rounded-full hover:bg-secondary/90 transition-colors text-lg font-medium shadow-md shadow-secondary/20"
                 >
                   {t('contact.cta')}
                 </Link>
@@ -56,7 +65,7 @@ const Navratri = () => {
 
         {/* CTA Section */}
         <div className="mt-24 text-center">
-          <div className="bg-neutral rounded-2xl p-12">
+          <div className="bg-gradient-to-r from-neutral via-primary/90 to-neutral rounded-2xl p-12 ring-1 ring-secondary/15 soft-shadow">
             <h2 className="font-display text-3xl text-secondary mb-4">
               {t('navratri.cta.title')}
             </h2>
@@ -65,7 +74,7 @@ const Navratri = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center px-8 py-3 bg-secondary text-primary rounded-full hover:bg-secondary/90 transition-colors text-lg font-medium"
+              className="focus-ring inline-flex items-center px-8 py-3 bg-secondary text-primary rounded-full hover:bg-secondary/90 transition-colors text-lg font-medium shadow-md shadow-secondary/20"
             >
               {t('navratri.cta.button')}
             </Link>

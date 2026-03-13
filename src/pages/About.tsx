@@ -27,7 +27,7 @@ const About = () => {
           </div>
           <div className="aspect-[5/3] rounded-lg overflow-hidden">
             <img
-              src="/assets/founder 1.jpg"
+              src="/assets/About page Mummy.JPG"
               alt={t('about.mission.title')}
               className="w-full h-full object-cover object-[center_20%]"
             />
