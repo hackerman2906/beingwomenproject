@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Contact, Star } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PageWrapper from '../components/PageWrapper';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -37,36 +37,80 @@ const Home = () => {
       author: t('testimonials.reviews.0.author'),
       image: "/assets/Elena Testimonial.jpg",
       rating: 5,
-      objectPosition: "center 45%"
+      objectPosition: "center 55%"
     },
     {
       text: t('testimonials.reviews.1.text'),
       author: t('testimonials.reviews.1.author'),
-      image: "/assets/aesha testimonial 2.jpeg",
+      image: "/assets/aeshatestimonialtry1.JPG",
       rating: 5,
-      objectPosition: "center 80%"
+      objectPosition: "center 60%"
     },
     {
       text: t('testimonials.reviews.2.text'),
       author: t('testimonials.reviews.2.author'),
-      image: "/assets/Alice testimonial 3.jpeg",
+      image: "/assets/Alice testimonial 3.JPG",
       rating: 5,
-      objectPosition: "center 65%"
+      objectPosition: "center 55%"
     },
     {
       text: t('testimonials.reviews.3.text'),
       author: t('testimonials.reviews.3.author'),
-      image: "/assets/whatsapp 21.jpg",
+      image: "/assets/maan test2.JPG",
       rating: 5,
-      objectPosition: "center 55%"
+      objectPosition: "center 60%"
     }
   ];
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const cardRef = useRef<HTMLDivElement | null>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
-  const visibleTestimonials = 3;
-  const maxTestimonialIndex = Math.max(testimonials.length - visibleTestimonials, 0);
+  const [slideStep, setSlideStep] = useState(0);
+  const maxTestimonialIndex = Math.max(testimonials.length - 1, 0);
   const canGoPrev = testimonialIndex > 0;
   const canGoNext = testimonialIndex < maxTestimonialIndex;
-  const translatePercent = (100 / visibleTestimonials) * testimonialIndex;
+
+  useEffect(() => {
+    const updateStep = () => {
+      if (!trackRef.current || !cardRef.current) {
+        return;
+      }
+
+      const styles = window.getComputedStyle(trackRef.current);
+      const rawGap = styles.gap || styles.columnGap || '0';
+      const parsedGap = parseFloat(rawGap);
+      const gapValue = Number.isFinite(parsedGap) ? parsedGap : 0;
+      setSlideStep(cardRef.current.getBoundingClientRect().width + gapValue);
+    };
+
+    updateStep();
+    window.addEventListener('resize', updateStep);
+
+    return () => window.removeEventListener('resize', updateStep);
+  }, []);
+
+  const handleTestimonialScroll = () => {
+    if (!trackRef.current || !slideStep) {
+      return;
+    }
+
+    const nextIndex = Math.round(trackRef.current.scrollLeft / slideStep);
+    if (nextIndex !== testimonialIndex) {
+      setTestimonialIndex(nextIndex);
+    }
+  };
+
+  const goToTestimonial = (nextIndex: number) => {
+    if (!trackRef.current || !slideStep) {
+      setTestimonialIndex(nextIndex);
+      return;
+    }
+
+    trackRef.current.scrollTo({
+      left: slideStep * nextIndex,
+      behavior: 'smooth'
+    });
+    setTestimonialIndex(nextIndex);
+  };
 
   return (
     <PageWrapper className="bg-primary">
@@ -79,6 +123,9 @@ const Home = () => {
       alt={t('hero.title')}
       className="w-full h-full object-cover"
       style={{ objectPosition: 'center 55%', opacity: 0.98 }} // You can adjust '20%' here
+      loading="eager"
+      fetchPriority="high"
+      decoding="async"
     />
     <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/75 to-primary/90" />
   </div>
@@ -123,13 +170,14 @@ const Home = () => {
                 to={service.link}
                 className="group bg-neutral/95 rounded-xl overflow-hidden soft-shadow hover:shadow-xl transition-all duration-300 hover:-translate-y-1 focus-ring ring-1 ring-secondary/10"
               >
-                <div className="aspect-[4/3] overflow-hidden image-overlay">
+                <div className="aspect-[4/5] overflow-hidden image-overlay">
                   <img
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                     style={{ objectPosition: service.objectPosition }}
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="p-6 md:p-8">
@@ -154,10 +202,10 @@ const Home = () => {
             <p className="text-lg md:text-xl text-secondary/80">{t('testimonials.subtitle')}</p>
           </div>
           <div className="relative" aria-label="Testimonials">
-            <div className="hidden md:flex items-center justify-end gap-3 mb-6">
+            <div className="flex items-center justify-center md:justify-end gap-3 mb-4 md:mb-6">
               <button
                 type="button"
-                onClick={() => setTestimonialIndex((prev) => Math.max(prev - 1, 0))}
+                onClick={() => goToTestimonial(Math.max(testimonialIndex - 1, 0))}
                 className="focus-ring h-10 w-10 rounded-full bg-secondary text-primary shadow-md shadow-secondary/20 hover:bg-secondary/90 transition disabled:opacity-40"
                 aria-label="Previous testimonials"
                 disabled={!canGoPrev}
@@ -167,7 +215,7 @@ const Home = () => {
               </button>
               <button
                 type="button"
-                onClick={() => setTestimonialIndex((prev) => Math.min(prev + 1, maxTestimonialIndex))}
+                onClick={() => goToTestimonial(Math.min(testimonialIndex + 1, maxTestimonialIndex))}
                 className="focus-ring h-10 w-10 rounded-full bg-secondary text-primary shadow-md shadow-secondary/20 hover:bg-secondary/90 transition disabled:opacity-40"
                 aria-label="Next testimonials"
                 disabled={!canGoNext}
@@ -176,35 +224,50 @@ const Home = () => {
                 <span aria-hidden="true">→</span>
               </button>
             </div>
-            <div className="overflow-hidden">
-              <div
-                className="flex gap-6 md:gap-8 transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(-${translatePercent}%)` }}
-              >
-                {testimonials.map((testimonial, index) => (
-                  <div
-                    key={index}
-                    className="min-w-full md:min-w-[calc((100%-2rem)/3)] bg-neutral p-6 md:p-8 rounded-xl soft-shadow ring-1 ring-secondary/10"
-                  >
-                    <div className="mb-6 aspect-[4/3] rounded-lg overflow-hidden image-overlay">
-                      <img
-                        src={testimonial.image}
-                        alt={`${testimonial.author}'s outfit`}
-                        className="w-full h-full object-cover"
-                        style={{ objectPosition: testimonial.objectPosition || 'center' }}
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="flex mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 md:h-5 md:w-5 text-secondary fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-secondary/80 mb-6 italic text-sm md:text-base">"{testimonial.text}"</p>
-                    <p className="text-secondary font-medium text-sm md:text-base">{testimonial.author}</p>
+            <div
+              ref={trackRef}
+              onScroll={handleTestimonialScroll}
+              className="flex gap-6 md:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar"
+            >
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  ref={index === 0 ? cardRef : undefined}
+                  className="flex-none w-full md:w-[calc((100%-4rem)/3)] snap-start snap-always bg-neutral p-6 md:p-8 rounded-xl soft-shadow ring-1 ring-secondary/10"
+                >
+                  <div className="mb-6 aspect-[3/4] rounded-lg overflow-hidden image-overlay-subtle">
+                    <img
+                      src={testimonial.image}
+                      alt={`${testimonial.author}'s outfit`}
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: testimonial.objectPosition || 'center' }}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
-                ))}
-              </div>
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 md:h-5 md:w-5 text-secondary fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-secondary/80 mb-6 italic text-sm md:text-base">"{testimonial.text}"</p>
+                  <p className="text-secondary font-medium text-sm md:text-base">{testimonial.author}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 flex items-center justify-center gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => goToTestimonial(index)}
+                  className={`h-2.5 w-2.5 rounded-full transition ${
+                    index === testimonialIndex ? 'bg-secondary' : 'bg-secondary/40 hover:bg-secondary/60'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                  aria-pressed={index === testimonialIndex}
+                />
+              ))}
             </div>
           </div>
         </div>

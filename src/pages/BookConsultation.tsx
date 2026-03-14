@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, Clock, MapPin, Phone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PageWrapper from '../components/PageWrapper';
@@ -33,7 +32,7 @@ const BookConsultation = () => {
                     <Phone className="h-5 w-5 text-secondary mt-1" />
                     <div>
                       <h3 className="font-semibold text-secondary">{t('bookConsultation.howToBook.contact.phone')}</h3>
-                      <p className="text-secondary/80">+91 98765 43210</p>
+                      <p className="text-secondary/80">+91 99249 25874</p>
                     </div>
                   </div>
 
@@ -49,16 +48,16 @@ const BookConsultation = () => {
                     <MapPin className="h-5 w-5 text-secondary mt-1" />
                     <div>
                       <h3 className="font-semibold text-secondary">{t('bookConsultation.howToBook.contact.visit')}</h3>
-                      <p className="text-secondary/80">
-                        123 Fashion Street, Linking Road<br />
-                        Mumbai, Maharashtra 400050
-                      </p>
+                      <p
+                        className="text-secondary/80"
+                        dangerouslySetInnerHTML={{ __html: t('contact.info.addressdetails') }}
+                      />
                     </div>
                   </div>
                 </div>
 
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919924925874"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-8 py-3 bg-secondary text-primary rounded-full hover:bg-secondary/90 transition-colors text-lg font-medium mt-4"
@@ -71,12 +70,14 @@ const BookConsultation = () => {
             <div className="bg-neutral p-8 rounded-lg">
               <h2 className="font-display text-2xl text-secondary mb-6">{t('bookConsultation.whatToExpect.title')}</h2>
               <ul className="space-y-4 text-secondary/80">
-                {t('bookConsultation.whatToExpect.steps', { returnObjects: true }).map((step: string, index: number) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <span className="font-semibold">{index + 1}.</span>
-                    {step}
-                  </li>
-                ))}
+                {(t('bookConsultation.whatToExpect.steps', { returnObjects: true }) as string[]).map(
+                  (step, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="font-semibold">{index + 1}.</span>
+                      {step}
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </div>
@@ -90,10 +91,18 @@ const BookConsultation = () => {
             <p className="text-secondary/80 mb-6">
               {t('bookConsultation.onlineBooking.subtitle')}
             </p>
-            <div className="aspect-square bg-secondary/10 rounded-lg flex items-center justify-center">
-              <p className="text-secondary/60 text-center px-8">
+            <div className="space-y-4">
+              <div className="rounded-lg bg-secondary/10 p-6 text-center text-secondary/70">
                 {t('bookConsultation.onlineBooking.comingSoon')}
-              </p>
+              </div>
+              <a
+                href={t('bookConsultation.onlineBooking.calendarUrl')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full rounded-full bg-secondary px-6 py-3 text-base font-medium text-primary transition-colors hover:bg-secondary/90"
+              >
+                {t('bookConsultation.onlineBooking.cta')}
+              </a>
             </div>
           </div>
         </div>

@@ -11,6 +11,27 @@ const Navratri = () => {
     "/assets/dress3.JPG",
     "/assets/dress4.jpeg"
   ];
+  const garbaGalleryImages = [
+    "/assets/Garba outfits/IMG-20240815-WA0015.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0020.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0037.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0043.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0044.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0045.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0052.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0057.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0062.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0070.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0071.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0074.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0076.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0077.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0080.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0081.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0082.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0087.jpg",
+    "/assets/Garba outfits/IMG-20240815-WA0092.jpg"
+  ];
 
   return (
     <PageWrapper className="bg-primary min-h-screen">
@@ -33,12 +54,13 @@ const Navratri = () => {
               className={`group flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center ${index === 0 ? '' : 'pt-12 md:pt-16 border-t border-secondary/15'}`}
             >
               <div className="w-full md:w-1/2">
-                <div className="aspect-[6/5] overflow-hidden rounded-2xl image-overlay soft-shadow ring-1 ring-secondary/10">
+                <div className="aspect-[4/5] overflow-hidden rounded-2xl image-overlay soft-shadow ring-1 ring-secondary/10">
                   <img
                     src={serviceImages[index]}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -78,6 +100,34 @@ const Navratri = () => {
             >
               {t('navratri.cta.button')}
             </Link>
+          </div>
+        </div>
+
+        {/* Garba Gallery */}
+        <div className="mt-24">
+          <div className="text-center mb-10">
+            <h2 className="font-display text-3xl text-secondary mb-3">
+              {t('navratri.gallery.title', 'Garba Gallery')}
+            </h2>
+            <p className="text-secondary/80">
+              {t('navratri.gallery.subtitle', 'A glimpse of our Navratri looks.')}
+            </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {garbaGalleryImages.map((src, index) => (
+              <div
+                key={`${src}-${index}`}
+                className="aspect-[2/3] overflow-hidden rounded-2xl image-overlay soft-shadow ring-1 ring-secondary/10"
+              >
+                <img
+                  src={src}
+                  alt={`${t('navratri.gallery.altPrefix', 'Garba look')} ${index + 1}`}
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

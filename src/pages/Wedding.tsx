@@ -10,7 +10,7 @@ const Wedding = () => {
     "/assets/wedding page photo1 lehenga.JPG",
     "/assets/Wedding page photo 2 - designer blouse.jpeg",
     "/assets/Wedding photo 3 blouse.JPG",
-    "/assets/Wedding photo 4 coordinated wear.JPG"
+    "/assets/Aneesh_Maan_Haldi.JPG"
   ];
 
   return (
@@ -34,12 +34,13 @@ const Wedding = () => {
               className={`group flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center ${index === 0 ? '' : 'pt-12 md:pt-16 border-t border-secondary/15'}`}
             >
               <div className="w-full md:w-1/2">
-                <div className="aspect-[6/5] overflow-hidden rounded-2xl image-overlay soft-shadow ring-1 ring-secondary/10">
+                <div className="aspect-[4/5] overflow-hidden rounded-2xl image-overlay soft-shadow ring-1 ring-secondary/10">
                   <img
                     src={serviceImages[index]}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>

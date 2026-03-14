@@ -31,6 +31,7 @@ const Navbar = () => {
               src="/assets/logo_transparent_bg.png"
               alt="Being Women logo"
               className="h-8 md:h-10 w-auto"
+              decoding="async"
             />
             <span className="font-display text-2xl md:text-3xl font-bold text-secondary tracking-wide">
               women

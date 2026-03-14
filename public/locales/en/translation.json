@@ -42,12 +42,12 @@
         "author": "Aesha"
       },
       {
-        "text": "The team at Being Women transformed my everyday wear with expert tailoring. Every piece fits like it was made for me - because it was!",
-        "author": "Roshni Mehta"
+        "text": "I visited Being Women for a tailored outfit for a friend’s wedding and felt genuinely cared for. Their colour choices suited me perfectly, they taught me how to wear the sari, and the craftsmanship with quick turnaround was outstanding. The fit and details were flawless.",
+        "author": "Alice"
       },
       {
-        "text": "Beautiful stitching and a perfect fit. The blouse detailing was stunning and felt so premium.",
-        "author": "Anaya Desai"
+        "text": "My mother is a very talented designer at BeingWomen in Gandhinagar. What makes her special is that she never stops refining a design until she is completely satisfied. She has a great eye for colors and styles that suit my skin tone and body type. I feel lucky to have her, because she always makes sure the final piece is perfect. Whenever I wear her designs, I feel confident, comfortable, and truly myself.",
+        "author": "Maan Soni"
       }
     ]
   },
@@ -56,7 +56,7 @@
     "subtitle": "Celebrating the rich heritage of Indian fashion while embracing modern elegance",
     "mission": {
       "title": "Our Mission",
-      "description": "At Being Women, we are dedicated to bringing you authentic, stylish, and high-quality ethnic wear. Our mission is to preserve and celebrate the rich traditions of Indian fashion while making it accessible to the modern woman."
+      "description": "At Being Women, our mission is to create authentic, stylish, and high quality ethnic wear that celebrates both tradition and individuality. We are inspired by the rich heritage of Indian textiles, embroidery, colors, and silhouettes, and we strive to bring this timeless beauty into the lives of modern women.\n\nOur boutique was founded on a simple belief that every woman deserves clothing that fits her perfectly and reflects her personal style. Through custom tailoring and personalized fittings, we design garments that are made specifically for the woman who wears them. Whether it is a bridal lehenga, a Navratri chaniya choli, a festive blouse, or elegant everyday ethnic wear, our goal is to create pieces that feel special and meaningful.\n\nQuality and craftsmanship guide everything we do. We carefully select fabrics and focus on precise stitching and thoughtful detailing to ensure that every garment offers comfort, durability, and elegance.\n\nWe also believe that clothing should empower women. When a woman feels confident in what she wears, it reflects in her presence and energy. At Being Women, we aim to create garments that honor tradition while helping every woman feel confident, elegant, and truly herself"
     },
     "values": {
       "title": "Our Values",
@@ -119,7 +119,7 @@
       "contact": {
         "phone": "Call or WhatsApp",
         "hours": "Available Hours",
-        "visit": "Visit Our Bouti",
+        "visit": "Visit Our Boutique",
         "whatsapp": "Contact Now on WhatsApp"
       }
     },
@@ -136,7 +136,9 @@
     "onlineBooking": {
       "title": "Online Booking",
       "subtitle": "Online appointment booking will be available soon. For now, please contact us directly to schedule your consultation.",
-      "comingSoon": "Calendar booking system coming soon!\nPlease contact us via WhatsApp or phone to schedule your appointment."
+      "comingSoon": "Calendar booking system coming soon!\nPlease contact us via WhatsApp or phone to schedule your appointment.",
+      "cta": "Book an Appointment",
+      "calendarUrl": "https://calendly.com/beingwomen/consultation"
     }
   },
   "faq": {
@@ -241,7 +243,7 @@
         "description": "Embrace tradition with our custom-crafted GharChola, Bandhani, and Patola sarees. Each piece features exquisite zari work and gota-patti finishes, creating the perfect traditional wedding attire. Our team pays special attention to incorporating authentic Gujarati elements while ensuring modern style."
       },
       "family": {
-        "title": "Coordinated Family Wedding Wear",
+        "title": "Couple Co-ords",
         "description": "Make every moment memorable with coordinated outfits for the bride’s family. Our designers create harmonious looks that complement the bridal attire while maintaining individual elegance. Each piece is tailored to perfection, ensuring everyone shines on the special day."
       }
     },
@@ -341,7 +343,26 @@
       "timesunday": "Closed"
     },
     "cta": "Schedule Your Consultation",
-    "whatsapp": "Contact Now on WhatsApp"
+    "whatsapp": "Contact us on WhatsApp"
+  },
+  "chatbot": {
+    "title": "Being Women Chatbot",
+    "subtitle": "Ask about services, fittings, or store hours.",
+    "cta": "Talk to our Being Women chatbot",
+    "open": "Open Being Women chatbot",
+    "close": "Close chatbot",
+    "placeholder": "Type your message...",
+    "send": "Send message",
+    "welcome": "Hi! I'm the Being Women assistant. How can I help you today?",
+    "responses": {
+      "booking": "You can book a consultation by calling or WhatsApp at +91 99249 25874. Would you like me to share the details?",
+      "pricing": "Prices vary by design and fabric. Share your idea, and we can guide you with an estimate.",
+      "hours": "We are open Tuesday to Sunday, 11:00 AM - 7:00 PM IST.",
+      "location": "We are located near Bus Stand, Sector 29, Gandhinagar. I can share the full address if you need it.",
+      "whatsapp": "You can reach us on WhatsApp at +91 99249 25874.",
+      "services": "We specialize in bridal, festive, and everyday wear including blouses, lehengas, and sarees.",
+      "default": "Thanks for your message! Share more details and I'll guide you."
+    }
   },
   "footer": {
     "tagline": "Celebrating traditional Indian fashion with modern elegance",
