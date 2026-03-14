@@ -66,7 +66,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Book Consultation */}
+          {/* Contact */}
           <div>
             <h3 className="font-semibold text-secondary mb-4 md:mb-6 text-lg">
               {t('footer.sections.consultation')}
@@ -75,7 +75,7 @@ const Footer = () => {
               {t('footer.consultation.text')}
             </p>
             <Link
-              to="/book-consultation"
+              to="/contact"
               className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 bg-secondary text-primary rounded-full hover:bg-secondary/90 transition-colors group text-sm md:text-base"
             >
               {t('footer.consultation.cta')}

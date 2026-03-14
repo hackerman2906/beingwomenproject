@@ -6,14 +6,19 @@ const Navratri = () => {
   const { t } = useTranslation();
 
   const services = t('navratri.services', { returnObjects: true });
+  const ctaPhrases = [
+    t('ctaPhrases.discoverStyle'),
+    t('ctaPhrases.createLook'),
+    t('ctaPhrases.stepIntoElegance'),
+    t('ctaPhrases.findYourFit'),
+  ];
   const serviceImages = [
-    "/assets/dress2.JPG",
-    "/assets/dress3.JPG",
+    "/assets/navratrichaniyacholi.JPG",
+    "/assets/navratriblouse.JPG",
     "/assets/dress4.jpeg"
   ];
   const garbaGalleryImages = [
     "/assets/Garba outfits/IMG-20240815-WA0015.jpg",
-    "/assets/Garba outfits/IMG-20240815-WA0020.jpg",
     "/assets/Garba outfits/IMG-20240815-WA0037.jpg",
     "/assets/Garba outfits/IMG-20240815-WA0043.jpg",
     "/assets/Garba outfits/IMG-20240815-WA0044.jpg",
@@ -54,11 +59,11 @@ const Navratri = () => {
               className={`group flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center ${index === 0 ? '' : 'pt-12 md:pt-16 border-t border-secondary/15'}`}
             >
               <div className="w-full md:w-1/2">
-                <div className="aspect-[4/5] overflow-hidden rounded-2xl image-overlay soft-shadow ring-1 ring-secondary/10">
+                <div className="rounded-2xl image-overlay soft-shadow ring-1 ring-secondary/10">
                   <img
                     src={serviceImages[index]}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-auto object-contain"
                     loading="lazy"
                     decoding="async"
                   />
@@ -78,51 +83,33 @@ const Navratri = () => {
                   to="/contact"
                   className="focus-ring inline-flex items-center px-8 py-3 bg-secondary text-primary rounded-full hover:bg-secondary/90 transition-colors text-lg font-medium shadow-md shadow-secondary/20"
                 >
-                  {t('contact.cta')}
+                  {ctaPhrases[index % ctaPhrases.length]}
                 </Link>
               </div>
             </section>
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-24 text-center">
-          <div className="bg-gradient-to-r from-neutral via-primary/90 to-neutral rounded-2xl p-12 ring-1 ring-secondary/15 soft-shadow">
-            <h2 className="font-display text-3xl text-secondary mb-4">
-              {t('navratri.cta.title')}
-            </h2>
-            <p className="text-secondary/80 mb-8 max-w-2xl mx-auto">
-              {t('navratri.cta.subtitle')}
-            </p>
-            <Link
-              to="/contact"
-              className="focus-ring inline-flex items-center px-8 py-3 bg-secondary text-primary rounded-full hover:bg-secondary/90 transition-colors text-lg font-medium shadow-md shadow-secondary/20"
-            >
-              {t('navratri.cta.button')}
-            </Link>
-          </div>
-        </div>
-
         {/* Garba Gallery */}
         <div className="mt-24">
           <div className="text-center mb-10">
             <h2 className="font-display text-3xl text-secondary mb-3">
-              {t('navratri.gallery.title', 'Garba Gallery')}
+              {t('navratri.gallery.title')}
             </h2>
             <p className="text-secondary/80">
-              {t('navratri.gallery.subtitle', 'A glimpse of our Navratri looks.')}
+              {t('navratri.gallery.subtitle')}
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {garbaGalleryImages.map((src, index) => (
               <div
                 key={`${src}-${index}`}
-                className="aspect-[2/3] overflow-hidden rounded-2xl image-overlay soft-shadow ring-1 ring-secondary/10"
+                className="rounded-2xl overflow-hidden image-overlay soft-shadow ring-1 ring-secondary/10"
               >
                 <img
                   src={src}
                   alt={`${t('navratri.gallery.altPrefix', 'Garba look')} ${index + 1}`}
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  className="h-auto w-full object-contain transform scale-100"
                   loading="lazy"
                   decoding="async"
                 />

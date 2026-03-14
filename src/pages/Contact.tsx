@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageWrapper from '../components/PageWrapper';
@@ -52,19 +52,108 @@ const Contact = () => {
 
   return (
     <PageWrapper className="bg-primary min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-12">
-          <h1 className="font-display text-4xl md:text-5xl text-secondary mb-6">{t('contact.title')}</h1>
-          <p className="text-xl text-secondary/90 max-w-2xl mx-auto">
-            {t('contact.subtitle')}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="text-center mb-8">
+          <h1 className="font-display text-3xl md:text-4xl text-secondary mb-4">{t('bookConsultation.title')}</h1>
+          <p className="text-base md:text-lg text-secondary/90 max-w-2xl mx-auto">
+            {t('bookConsultation.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="bg-neutral p-8 rounded-lg">
-            <h2 className="font-display text-2xl text-secondary mb-6">{t('contact.form.title')}</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Online Booking */}
+        <div className="mb-6 bg-neutral p-5 rounded-md">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h2 className="font-display text-xl text-secondary mb-2">
+                {t('bookConsultation.onlineBooking.title')}
+              </h2>
+              <p className="text-secondary/80 text-sm">
+                {t('bookConsultation.onlineBooking.subtitle')}
+              </p>
+            </div>
+            <a
+              href={t('bookConsultation.onlineBooking.calendarUrl')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-secondary px-6 py-2 text-sm font-medium text-primary transition-colors hover:bg-secondary/90"
+            >
+              {t('bookConsultation.onlineBooking.cta')}
+            </a>
+          </div>
+          <p className="mt-3 text-sm text-secondary/70">
+            {t('bookConsultation.onlineBooking.comingSoon')}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* How to Book */}
+          <div className="bg-neutral p-5 rounded-md">
+            <h2 className="font-display text-xl text-secondary mb-4">{t('bookConsultation.howToBook.title')}</h2>
+            <p className="text-secondary/80 text-sm mb-4">
+              {t('bookConsultation.howToBook.description')}
+            </p>
+            <p className="text-sm text-secondary/80 mb-4">
+              <a
+                href="https://wa.me/919924925874"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-secondary"
+              >
+                {t('bookConsultation.howToBook.links.whatsapp')}
+              </a>
+              <span className="mx-2 text-secondary/50">|</span>
+              <a
+                href="tel:+919924925874"
+                className="underline underline-offset-2 hover:text-secondary"
+              >
+                {t('bookConsultation.howToBook.links.call')} +91 99249 25874
+              </a>
+            </p>
+            <div className="space-y-3 text-sm text-secondary/80">
+              <div className="flex items-start gap-3">
+                <Mail className="h-4 w-4 text-secondary mt-1" />
+                <div>
+                  <p className="font-semibold text-secondary">{t('contact.info.email')}</p>
+                  <a href="mailto:beingwomengnr@gmail.com" className="text-secondary/80 hover:text-secondary transition-colors">
+                    beingwomengnr@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-4 w-4 text-secondary mt-1" />
+                <div>
+                  <p className="font-semibold text-secondary">{t('bookConsultation.howToBook.contact.visit')}</p>
+                  <p dangerouslySetInnerHTML={{ __html: t('contact.info.addressdetails') }} />
+                </div>
+              </div>
+            </div>
+            <div className="mt-4">
+              <p className="text-xs font-semibold text-secondary mb-2">{t('bookConsultation.howToBook.contact.visit')}</p>
+              <div className="aspect-[3/2] overflow-hidden rounded-md border border-secondary/10">
+                <iframe
+                  title={t('bookConsultation.howToBook.contact.visit')}
+                  src="https://www.google.com/maps?q=Bus%20Stand,%20Sector%2029,%20Gandhinagar,%20Gujarat%20382030&output=embed"
+                  className="h-full w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </div>
+            <a
+              href="https://wa.me/919924925874"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-5 py-2 mt-4 bg-secondary text-primary rounded-full hover:bg-secondary/90 transition-colors text-sm font-medium"
+            >
+              {t('bookConsultation.howToBook.contact.whatsapp')}
+            </a>
+          </div>
+
+          {/* Contact Form + What to Expect */}
+          <div className="space-y-6">
+            <div className="bg-neutral p-5 rounded-md">
+              <h2 className="font-display text-xl text-secondary mb-4">{t('contact.form.title')}</h2>
+              <form onSubmit={handleSubmit} className="space-y-4">
               {/* Form Inputs */}
               {['name', 'email', 'subject', 'message'].map((field, idx) => (
                 <div key={idx}>
@@ -80,7 +169,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       placeholder={t(`contact.form.${field}Placeholder`)}
-                      className="w-full rounded-md border border-secondary/20 bg-primary px-4 py-2 text-secondary placeholder-secondary/50 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none"
+                      className="w-full rounded-md border border-secondary/20 bg-primary px-3 py-2 text-sm text-secondary placeholder-secondary/50 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none"
                     />
                   ) : (
                     <textarea
@@ -88,10 +177,10 @@ const Contact = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      rows={4}
+                      rows={3}
                       required
                       placeholder={t('contact.form.messagePlaceholder')}
-                      className="w-full rounded-md border border-secondary/20 bg-primary px-4 py-2 text-secondary placeholder-secondary/50 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none"
+                      className="w-full rounded-md border border-secondary/20 bg-primary px-3 py-2 text-sm text-secondary placeholder-secondary/50 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none"
                     />
                   )}
                 </div>
@@ -100,7 +189,7 @@ const Contact = () => {
               {/* Submit Button */}
               <button 
                 type="submit" 
-                className="w-full bg-secondary text-primary px-6 py-3 rounded-md hover:bg-secondary/90 transition-colors flex items-center justify-center"
+                className="w-full bg-secondary text-primary px-5 py-2.5 rounded-md hover:bg-secondary/90 transition-colors flex items-center justify-center text-sm"
                 disabled={status === 'loading'}
               >
                 <Send className="h-4 w-4 mr-2" />
@@ -112,54 +201,25 @@ const Contact = () => {
                 <p className="text-red-500 text-center">{t('contact.form.error')}</p>
               )}
             </form>
-          </div>
-
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="bg-neutral p-8 rounded-lg">
-              <h2 className="font-display text-2xl text-secondary mb-6">{t('contact.info.title')}</h2>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <Phone className="h-5 w-5 text-secondary mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-secondary">{t('contact.info.phone')}</h3>
-                    <p className="text-secondary/80">+9199249 25874</p>
-                    <p className="text-secondary/80">{t('contact.info.hours')}</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <Mail className="h-5 w-5 text-secondary mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-secondary">{t('contact.info.email')}</h3>
-                    <p className="text-secondary/80">beingwomengnr@gmail.com</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <MapPin className="h-5 w-5 text-secondary mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-secondary">{t('contact.info.address')}</h3>
-                    <p className="text-secondary/80" dangerouslySetInnerHTML={{ __html: t('contact.info.addressdetails') }} />
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Store Hours */}
-            <div className="bg-neutral p-8 rounded-lg">
-              <h2 className="font-display text-2xl text-secondary mb-6">{t('contact.hours.title')}</h2>
-              <div className="space-y-2">
-                <div className="flex justify-between text-secondary">
-                  <span>{t('contact.hours.weekdays')}</span>
-                  <span>{t('contact.hours.timing')}</span>
-                </div>
-                <div className="flex justify-between text-secondary">
-                  <span>{t('contact.hours.monday')}</span>
-                  <span>{t('contact.hours.closed')}</span>
-                </div>                
-              </div>
+            <div className="bg-neutral p-5 rounded-md">
+              <h2 className="font-display text-xl text-secondary mb-4">{t('bookConsultation.whatToExpect.title')}</h2>
+              <ul className="space-y-3 text-sm text-secondary/80">
+                {(t('bookConsultation.whatToExpect.steps', { returnObjects: true }) as string[]).map(
+                  (step, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="font-semibold">{index + 1}.</span>
+                      {step}
+                    </li>
+                  )
+                )}
+              </ul>
             </div>
           </div>
         </div>
+
+        
 
         {/* Success Modal */}
         <AnimatePresence>
@@ -176,16 +236,17 @@ const Contact = () => {
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.8 }}
               >
-                <h2 className="font-display text-2xl mb-4 text-secondary">Form Submitted Successfully!</h2>
+                <h2 className="font-display text-2xl mb-4 text-secondary">
+                  {t('contact.form.successTitle')}
+                </h2>
                 <p className="text-secondary/80 mb-6">
-                  Thank you for reaching out!<br />
-                  We will contact you soon via Phone or WhatsApp.
+                  {t('contact.form.successMessage')}
                 </p>
                 <button 
                   onClick={() => setStatus('idle')}
                   className="px-6 py-2 bg-secondary text-primary rounded-full hover:bg-secondary/90 transition-colors"
                 >
-                  OK
+                  {t('contact.form.successCta')}
                 </button>
               </motion.div>
             </motion.div>

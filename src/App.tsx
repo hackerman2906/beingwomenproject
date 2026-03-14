@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 import Navbar from './components/Navbar';
@@ -18,7 +18,6 @@ import Terms from './pages/Terms';
 import FAQ from './pages/FAQ';
 import NotFound from './pages/NotFound';
 import Accessibility from './pages/Accessibility';
-import BookConsultation from './pages/BookConsultation';
 import ClientExperience from './pages/Clientexperience';
 
 function App() {
@@ -41,7 +40,7 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/accessibility" element={<Accessibility />} />
-            <Route path="/book-consultation" element={<BookConsultation />} />
+            <Route path="/book-consultation" element={<Navigate to="/contact" replace />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

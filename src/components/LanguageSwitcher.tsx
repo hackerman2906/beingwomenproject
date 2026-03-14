@@ -7,14 +7,17 @@ const LanguageSwitcher = () => {
 
   const languages = [
     { code: 'en', name: 'English' },
-    { code: 'hi', name: 'हिंदी' },
     { code: 'gu', name: 'ગુજરાતી' },
+    { code: 'hi', name: 'हिंदी' },
   ];
+
+  const currentLanguage = languages.find((lang) => lang.code === i18n.language) ?? languages[0];
 
   return (
     <div className="relative group">
-      <button className="flex items-center text-secondary hover:text-secondary/80 transition-colors">
+      <button className="flex items-center gap-2 text-secondary hover:text-secondary/80 transition-colors">
         <Globe className="h-5 w-5" />
+        <span className="text-sm font-medium">{currentLanguage.name}</span>
       </button>
       <div className="absolute right-0 mt-2 w-40 py-2 bg-neutral rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
         {languages.map((lang) => (

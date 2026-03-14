@@ -10,7 +10,7 @@
   "hero": {
     "title": "Tailored Elegance for Every Occasion",
     "subtitle": "Custom-Fit Bridal, Festive & Everyday Wear for the Modern Indian Woman",
-    "cta": "Book Consultation"
+    "cta": "Create Your Look"
   },  
   "services": {
     "title": "Our Services",
@@ -31,7 +31,7 @@
   },
   "testimonials": {
     "title": "Customer Feedback",
-    "subtitle": "What our clients say about their experience",
+    "subtitle": "What our happy customers say about their experience",
     "reviews": [
       {
         "text": "Thank you for the beautiful handmade outfits. Wearing something made with so much love made the celebration feel truly special. Every detail, from the colors to the soft fabrics and perfect cuts, was stunning. I did not just wear clothes. I wore a piece of your heart. Thank you for making me feel beautiful.",
@@ -116,6 +116,10 @@
     "howToBook": {
       "title": "How to Book",
       "description": "Our expert team will work with you to bring your vision to life. Please reach out via phone or WhatsApp at +91 99249 25874.",
+      "links": {
+        "whatsapp": "WhatsApp",
+        "call": "Call"
+      },
       "contact": {
         "phone": "Call or WhatsApp",
         "hours": "Available Hours",
@@ -240,11 +244,11 @@
       },
       "sarees": {
         "title": "Handcrafted Bridal Sarees",
-        "description": "Embrace tradition with our custom-crafted GharChola, Bandhani, and Patola sarees. Each piece features exquisite zari work and gota-patti finishes, creating the perfect traditional wedding attire. Our team pays special attention to incorporating authentic Gujarati elements while ensuring modern style."
+        "description": "Embrace tradition with our traditional sarees and custom-made matching blouses. Each piece features exquisite zari work and gota-patti finishes, creating the perfect traditional wedding attire. Our team pays special attention to incorporating authentic Gujarati elements while ensuring modern style."
       },
       "family": {
-        "title": "Couple Co-ords",
-        "description": "Make every moment memorable with coordinated outfits for the bride’s family. Our designers create harmonious looks that complement the bridal attire while maintaining individual elegance. Each piece is tailored to perfection, ensuring everyone shines on the special day."
+        "title": "Family Co-ords",
+        "description": "Make every moment memorable with coordinated outfits for the couple and the family. Our designers create harmonious looks that complement the bridal attire while maintaining individual elegance. Each piece is tailored to perfection, ensuring everyone shines on the special day."
       }
     },
     "cta": {
@@ -264,13 +268,18 @@
         "description": "Celebrate the spirit of Navratri with our personalized Chaniya Cholis. We design your outfits for all nine nights, tailored to fit you perfectly and stay comfortable for dancing away all night. Our expert tailors create flairs that complement your style and dancing grace."
       },
       "garbaWear": {
-        "title": "Garba Crop Tops & Blouses",
+        "title": "Blouses & Crop Tops",
         "description": "Dance the night away in our specially designed Garba tops and blouses. Each piece is crafted with breathable fabrics and secure stitching, allowing free movement while maintaining style. We incorporate traditional elements with modern comfort for the perfect festive wear."
       },
       "fusion": {
         "title": "Modern Fusion Styles & Accessories",
         "description": "Embrace modern festive fashion with our fusion Kediyu, Dhoti and Indo-Western styles. We combine traditional Gujarati elements with contemporary designs, creating unique outfits perfect for special Garba nights. From elaborately designed dupattas to matching potli bags and decorative latkans, we create coordinated pieces that perfectly complement your festive attire."
       }
+    },
+    "gallery": {
+      "title": "Our Designs",
+      "subtitle": "A glimpse of our Navratri designs.",
+      "altPrefix": "Garba look"
     },
     "cta": {
       "title": "Get Ready for Navratri",
@@ -309,7 +318,7 @@
   },
   "contact": {
     "title": "Get in Touch",
-    "subtitle": "Ready to experience the perfect fit? Book a consultation with our expert tailors today.",
+    "subtitle": "Ready to experience the perfect fit? Reach out to our team today.",
     "form": {
       "title": "Send us a Message",
       "name": "Name",
@@ -323,7 +332,12 @@
       "send": "Send Message",
       "sending": "Sending...",
       "success": "Message sent successfully!",
-      "error": "Failed to send a message. Please try again."
+      "error": "Failed to send a message. Please try again.",
+      "googleFormLabel": "Open the Google Form",
+      "googleFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdkwWrjC1QWfIP7siEG2PVgb675poeOqpcTZMXZFFjG_detNQ/viewform",
+      "successTitle": "Form Submitted Successfully!",
+      "successMessage": "Thank you for reaching out! We will contact you soon via phone or WhatsApp.",
+      "successCta": "OK"
     },
     "info": {
       "title": "Contact Information",
@@ -341,6 +355,10 @@
       "timing": "11:00 AM - 7:00 PM IST",
       "timesaturday": "11:00 AM - 7:00 PM IST",
       "timesunday": "Closed"
+    },
+    "map": {
+      "title": "Find Us on the Map",
+      "subtitle": "Visit our boutique in Sector 29, Gandhinagar."
     },
     "cta": "Schedule Your Consultation",
     "whatsapp": "Contact us on WhatsApp"
@@ -364,13 +382,19 @@
       "default": "Thanks for your message! Share more details and I'll guide you."
     }
   },
+  "ctaPhrases": {
+    "findYourFit": "Find Your Perfect Fit",
+    "discoverStyle": "Discover Your Style",
+    "createLook": "Create Your Look",
+    "stepIntoElegance": "Step Into Elegance"
+  },
   "footer": {
     "tagline": "Celebrating traditional Indian fashion with modern elegance",
     "made": "Proudly Crafted in India",
     "sections": {
       "collections": "Collections",
       "information": "Information",
-      "consultation": "Book Consultation"
+      "consultation": "Contact"
     },
     "links": {
       "about": "About Us",
@@ -382,10 +406,10 @@
       "terms": "Terms of Service"
     },
     "consultation": {
-      "text": "Ready to create your perfect outfit? Schedule a consultation with our expert tailors.",
-      "cta": "Book Consultation"
+      "text": "Have a question or want to book a fitting? Reach out to us.",
+      "cta": "Contact Us"
     },
-    "copyright": "© 2025 Being Women Gandhinagar. All rights reserved."
+    "copyright": "© 2026 Being Women Gandhinagar. All rights reserved."
   },
   "business": {
     "name": "Being Women Boutique Private Limited",

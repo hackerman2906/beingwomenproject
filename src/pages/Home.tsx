@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Contact, Star } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PageWrapper from '../components/PageWrapper';
 import { useEffect, useRef, useState } from 'react';
@@ -9,33 +9,33 @@ const Home = () => {
 
   const services = [
     {
-      title: t('services.wedding.title'),
-      description: t('services.wedding.description'),
-      image: "/assets/home page wedding wear.jpeg",
-      link: "/wedding",
-      objectPosition: "center 50%"
-    },
-    {
       title: t('services.navratri.title'),
       description: t('services.navratri.description'),
-      image: "/assets/whatsapp 2.jpg",
+      image: "/assets/homeservicenavratri.JPG",
       link: "/navratri",
       objectPosition: "center 10%"
     },
     {
+      title: t('services.wedding.title'),
+      description: t('services.wedding.description'),
+      image: "/assets/home page wedding wear.JPG",
+      link: "/wedding",
+      objectPosition: "center 50%"
+    },
+    {
       title: t('services.casual.title'),
       description: t('services.casual.description'),
-      image: "/assets/whatsapp 18.jpg",
+      image: "/assets/homeservicecasual.JPG",
       link: "/casual",
       objectPosition: "center 20%"
     }
   ];
 
-  const testimonials = [
+  const baseTestimonials = [
     {
-      text: t('testimonials.reviews.0.text'),
-      author: t('testimonials.reviews.0.author'),
-      image: "/assets/Elena Testimonial.jpg",
+      text: t('testimonials.reviews.2.text'),
+      author: t('testimonials.reviews.2.author'),
+      image: "/assets/Alice testimonial 3.JPG",
       rating: 5,
       objectPosition: "center 55%"
     },
@@ -47,27 +47,33 @@ const Home = () => {
       objectPosition: "center 60%"
     },
     {
-      text: t('testimonials.reviews.2.text'),
-      author: t('testimonials.reviews.2.author'),
-      image: "/assets/Alice testimonial 3.JPG",
+      text: t('testimonials.reviews.3.text'),
+      author: t('testimonials.reviews.3.author'),
+      image: "/assets/dress3.JPG",
       rating: 5,
       objectPosition: "center 55%"
     },
     {
-      text: t('testimonials.reviews.3.text'),
-      author: t('testimonials.reviews.3.author'),
-      image: "/assets/maan test2.JPG",
+      text: t('testimonials.reviews.0.text'),
+      author: t('testimonials.reviews.0.author'),
+      image: "/assets/Elena Testimonial.jpg",
       rating: 5,
-      objectPosition: "center 60%"
+      objectPosition: "center 55%"
     }
+  ];
+  const testimonials = [
+    ...baseTestimonials,
+    ...baseTestimonials,
+    ...baseTestimonials,
+    ...baseTestimonials,
+    ...baseTestimonials
   ];
   const trackRef = useRef<HTMLDivElement | null>(null);
   const cardRef = useRef<HTMLDivElement | null>(null);
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const baseCount = baseTestimonials.length;
+  const centerIndex = baseCount * 2;
+  const [testimonialIndex, setTestimonialIndex] = useState(centerIndex);
   const [slideStep, setSlideStep] = useState(0);
-  const maxTestimonialIndex = Math.max(testimonials.length - 1, 0);
-  const canGoPrev = testimonialIndex > 0;
-  const canGoNext = testimonialIndex < maxTestimonialIndex;
 
   useEffect(() => {
     const updateStep = () => {
@@ -79,7 +85,8 @@ const Home = () => {
       const rawGap = styles.gap || styles.columnGap || '0';
       const parsedGap = parseFloat(rawGap);
       const gapValue = Number.isFinite(parsedGap) ? parsedGap : 0;
-      setSlideStep(cardRef.current.getBoundingClientRect().width + gapValue);
+      const nextStep = cardRef.current.getBoundingClientRect().width + gapValue;
+      setSlideStep(nextStep);
     };
 
     updateStep();
@@ -88,27 +95,60 @@ const Home = () => {
     return () => window.removeEventListener('resize', updateStep);
   }, []);
 
-  const handleTestimonialScroll = () => {
-    if (!trackRef.current || !slideStep) {
+  useEffect(() => {
+    if (!trackRef.current || !slideStep || baseCount === 0) {
       return;
     }
 
-    const nextIndex = Math.round(trackRef.current.scrollLeft / slideStep);
+    trackRef.current.scrollTo({ left: slideStep * centerIndex, behavior: 'auto' });
+    setTestimonialIndex(centerIndex);
+  }, [slideStep, baseCount, centerIndex]);
+
+  const normalizeIndex = (index: number) => {
+    if (baseCount === 0) {
+      return 0;
+    }
+    return ((index % baseCount) + baseCount) % baseCount;
+  };
+
+  const scrollToIndex = (index: number, behavior: ScrollBehavior) => {
+    if (!trackRef.current || !slideStep) {
+      return;
+    }
+    trackRef.current.scrollTo({
+      left: slideStep * index,
+      behavior
+    });
+  };
+
+  const handleTestimonialScroll = () => {
+    if (!trackRef.current || !slideStep || baseCount === 0) {
+      return;
+    }
+
+    const rawIndex = Math.round(trackRef.current.scrollLeft / slideStep);
+    let nextIndex = rawIndex;
+
+    if (rawIndex <= baseCount) {
+      nextIndex = rawIndex + baseCount * 2;
+      scrollToIndex(nextIndex, 'auto');
+    } else if (rawIndex >= baseCount * 4) {
+      nextIndex = rawIndex - baseCount * 2;
+      scrollToIndex(nextIndex, 'auto');
+    }
+
     if (nextIndex !== testimonialIndex) {
       setTestimonialIndex(nextIndex);
     }
   };
 
   const goToTestimonial = (nextIndex: number) => {
-    if (!trackRef.current || !slideStep) {
+    if (!slideStep || baseCount === 0) {
       setTestimonialIndex(nextIndex);
       return;
     }
 
-    trackRef.current.scrollTo({
-      left: slideStep * nextIndex,
-      behavior: 'smooth'
-    });
+    scrollToIndex(nextIndex, 'smooth');
     setTestimonialIndex(nextIndex);
   };
 
@@ -122,7 +162,7 @@ const Home = () => {
       src="/assets/whatsapp 1.jpg"
       alt={t('hero.title')}
       className="w-full h-full object-cover"
-      style={{ objectPosition: 'center 55%', opacity: 0.98 }} // You can adjust '20%' here
+      style={{ objectPosition: 'center 57%', opacity: 0.98 }}
       loading="eager"
       fetchPriority="high"
       decoding="async"
@@ -142,7 +182,7 @@ const Home = () => {
         </p>
         <div className="flex justify-center md:justify-start">
           <Link
-            to="/book-consultation"
+            to="/contact"
             className="focus-ring inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-secondary text-primary rounded-full hover:bg-secondary/90 transition-colors text-base md:text-lg font-medium shadow-md shadow-secondary/20"
           >
             {t('hero.cta')}
@@ -170,11 +210,11 @@ const Home = () => {
                 to={service.link}
                 className="group bg-neutral/95 rounded-xl overflow-hidden soft-shadow hover:shadow-xl transition-all duration-300 hover:-translate-y-1 focus-ring ring-1 ring-secondary/10"
               >
-                <div className="aspect-[4/5] overflow-hidden image-overlay">
+                <div className="aspect-[2/3] overflow-hidden image-overlay">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                     className="w-full h-full object-cover"
                     style={{ objectPosition: service.objectPosition }}
                     loading="lazy"
                     decoding="async"
@@ -205,20 +245,18 @@ const Home = () => {
             <div className="flex items-center justify-center md:justify-end gap-3 mb-4 md:mb-6">
               <button
                 type="button"
-                onClick={() => goToTestimonial(Math.max(testimonialIndex - 1, 0))}
+                onClick={() => goToTestimonial(testimonialIndex - 1)}
                 className="focus-ring h-10 w-10 rounded-full bg-secondary text-primary shadow-md shadow-secondary/20 hover:bg-secondary/90 transition disabled:opacity-40"
                 aria-label="Previous testimonials"
-                disabled={!canGoPrev}
               >
                 <span className="sr-only">Previous</span>
                 <span aria-hidden="true">←</span>
               </button>
               <button
                 type="button"
-                onClick={() => goToTestimonial(Math.min(testimonialIndex + 1, maxTestimonialIndex))}
+                onClick={() => goToTestimonial(testimonialIndex + 1)}
                 className="focus-ring h-10 w-10 rounded-full bg-secondary text-primary shadow-md shadow-secondary/20 hover:bg-secondary/90 transition disabled:opacity-40"
                 aria-label="Next testimonials"
-                disabled={!canGoNext}
               >
                 <span className="sr-only">Next</span>
                 <span aria-hidden="true">→</span>
@@ -235,7 +273,7 @@ const Home = () => {
                   ref={index === 0 ? cardRef : undefined}
                   className="flex-none w-full md:w-[calc((100%-4rem)/3)] snap-start snap-always bg-neutral p-6 md:p-8 rounded-xl soft-shadow ring-1 ring-secondary/10"
                 >
-                  <div className="mb-6 aspect-[3/4] rounded-lg overflow-hidden image-overlay-subtle">
+                  <div className="mb-6 rounded-lg image-overlay-subtle">
                     <img
                       src={testimonial.image}
                       alt={`${testimonial.author}'s outfit`}
@@ -256,38 +294,21 @@ const Home = () => {
               ))}
             </div>
             <div className="mt-6 flex items-center justify-center gap-2">
-              {testimonials.map((_, index) => (
+              {baseTestimonials.map((_, index) => (
                 <button
                   key={index}
                   type="button"
-                  onClick={() => goToTestimonial(index)}
+                  onClick={() => goToTestimonial(centerIndex + index)}
                   className={`h-2.5 w-2.5 rounded-full transition ${
-                    index === testimonialIndex ? 'bg-secondary' : 'bg-secondary/40 hover:bg-secondary/60'
+                    index === normalizeIndex(testimonialIndex)
+                      ? 'bg-secondary'
+                      : 'bg-secondary/40 hover:bg-secondary/60'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
-                  aria-pressed={index === testimonialIndex}
+                  aria-pressed={index === normalizeIndex(testimonialIndex)}
                 />
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section className="py-16 md:py-24 bg-primary border-t border-secondary/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="font-display text-3xl md:text-4xl text-secondary mb-4">{t('contact.title')}</h2>
-            <p className="text-secondary/80 max-w-2xl mx-auto text-sm md:text-base">{t('contact.subtitle')}</p>
-          </div>
-          <div className="max-w-2xl mx-auto">
-            <Link
-              to="/book-consultation"
-              className="focus-ring block w-full text-center py-3 md:py-4 bg-gradient-to-r from-secondary to-yellow-400 text-primary font-semibold rounded-full shadow-md hover:brightness-110 transition text-base md:text-lg"
-            >
-              {t('contact.cta')}
-              <Contact className="inline ml-2 h-4 w-4 md:h-5 md:w-5" />
-            </Link>
           </div>
         </div>
       </section>

@@ -31,11 +31,11 @@ const About = () => {
               </p>
             ))}
           </div>
-          <div className="aspect-[2/3] md:aspect-[3/4] rounded-lg overflow-hidden bg-neutral/10">
+          <div className="rounded-lg bg-neutral/10">
             <img
-              src="/assets/About_Page_Final.JPG"
+              src="/assets/mummyaboutfinal.png"
               alt={t('about.mission.title')}
-              className="w-full h-full object-contain object-center"
+              className="w-full h-auto object-contain"
               loading="lazy"
               decoding="async"
             />
